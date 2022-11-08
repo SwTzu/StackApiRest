@@ -30,10 +30,10 @@ const ReservaForm = (props) => {
 
     const validationSchema = Yup.object().shape({
       fecha: Yup.date().required("Required"),
-      cant_persona: Yup.number(),
-      disp: Yup.number().min(0,"No puede ser menor a 0").required(),
-      clienteId: Yup.number().min(0,"No puede ser menor a 0").required(),
-      restauranteId: Yup.number().min(0,"No puede ser menor a 0").required()
+      cant_persona: Yup.number().min(0,"No puede ser menor a 0").required("Required"),
+      disp: Yup.number().min(0,"No puede ser menor a 0").required("Required"),
+      clienteId: Yup.number().min(0,"No puede ser menor a 0").required("Required"),
+      restauranteId: Yup.number().min(0,"No puede ser menor a 0").required("Required")
     });
 
     const ClienteDataSelect = () => {

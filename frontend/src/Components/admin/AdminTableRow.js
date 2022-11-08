@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import AdminDataService from "../../Services/admin.service";
   
 const AdminTableRow = (props) => {
-  const { id,rut,password,num_local} = props.obj;
+  const { id,rut,num_local} = props.obj;
   
   const deleteAdmin = () => {
     AdminDataService.remove(id)
       .then((res) => {
         if (res.status === 200) {
-          alert("Client successfully deleted");
+          alert("Admin successfully deleted");
           window.location.reload();
         } else Promise.reject();
       })
@@ -22,7 +22,6 @@ const AdminTableRow = (props) => {
   return (
     <tr>
       <td>{rut}</td>
-      <td>{password}</td>
       <td>{num_local}</td>
       <td>
         <Link className="edit-link" 

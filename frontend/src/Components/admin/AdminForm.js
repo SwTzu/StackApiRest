@@ -5,9 +5,9 @@ import { FormGroup, Button } from 'react-bootstrap';
 
 const AdminForm = (props) => {
   const validationSchema = Yup.object().shape({
-    rut: Yup.number().integer().required('Rut is required'),
-    password: Yup.string().required('Required'),
-    num_local: Yup.number().integer().required('telefono is required'),
+    rut: Yup.number().integer().min(0,"No puede ser menor a 0").required('Rut is required'),
+    password: Yup.string().required('password is Required'),
+    num_local: Yup.number().integer().min(0,"No puede ser menor a 0").required('num_local is required'),
   });
 
   return (

@@ -32,7 +32,7 @@ const ReservaList = () => {
       </Row>
       <Row>
         <Col>
-          <Link to={'/create-Reserva/'}>
+          <Link to={'/create-reserva/'}>
             <Button>Create reserva</Button>
           </Link>
         </Col>

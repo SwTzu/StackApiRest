@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ReservaDataService from '../../Services/reserva.service';
 import ReservaForm from './ReservaForm';
 
-const CreateReserva = () => {
+const CreateReserva = (props) => {
   const [formValues, setFormValues] = useState({
     fecha: '',
     cant_persona: '',
@@ -14,7 +14,13 @@ const CreateReserva = () => {
   const onSubmit = (productObject) => {
     ReservaDataService.create(productObject)
       .then((res) => {
-        if (res.status === 200) alert('Reserva successfully created');
+        if (res.status === 200) 
+        {
+          alert('Reserva successfully created');
+          props.history.push('/reserva-list');
+
+        }
+          
         else Promise.reject();
       })
       .catch((err) => alert(err));

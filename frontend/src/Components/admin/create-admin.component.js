@@ -1,9 +1,10 @@
 // Import Modules
 import React, { useState, useEffect } from 'react';
+import { propTypes } from 'react-bootstrap/esm/Image';
 import AdminDataService from '../../Services/admin.service';
 import AdminForm from './AdminForm';
 
-const CreateAdmin = () => {
+const CreateAdmin = (props) => {
   const [formValues, setFormValues] = useState({
     rut: '',
     password: '',
@@ -12,10 +13,13 @@ const CreateAdmin = () => {
   const onSubmit = (clientObject) => {
     AdminDataService.create(clientObject)
       .then(res => {
-        if (res.status === 200) alert('Admin successfully created');
+        if (res.status === 200) {
+          alert('Admin successfully created');
+          props.history.push('/admin-list');
+        }
         else Promise.reject();
       })
-      .catch((err) => alert('Algo salió mal'));
+      .catch((err) => alert(err));
   };
 
   // Return client form

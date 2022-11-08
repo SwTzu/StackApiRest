@@ -3,13 +3,16 @@ import React, { useState, useEffect } from "react";
 import ClienteDataService from "../../Services/cliente.service";
 import ClienteForm from "./ClienteForm";
   
-const CreateCliente = () => {
+const CreateCliente = (props) => {
   const [formValues, setFormValues] = useState({ rut: '', password: '', correo: '', nombre: '', telefono: '' });
   const onSubmit = clientObject => {
     ClienteDataService.create(clientObject)
       .then(res => {
-        if (res.status === 200)
-          alert('Client successfully created')
+        if (res.status === 200){
+
+          alert('Client successfully created');
+          props.history.push('/cliente-list');
+        }
         else
           Promise.reject()
       })

@@ -32,7 +32,7 @@ const AdminList = () => {
       </Row>
       <Row>
         <Col>
-          <Link to={"/create-admins"}>
+          <Link to={"/create-admin"}>
             <Button>Create admin</Button>
           </Link>
         </Col>
@@ -43,7 +43,6 @@ const AdminList = () => {
             <thead>
               <tr>
                 <th>rut</th>
-                <th>password</th>
                 <th>num_local</th>
                 <th>Actions</th>
               </tr>

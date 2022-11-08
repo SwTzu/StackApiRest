@@ -6,7 +6,7 @@ import { FormGroup, Button } from 'react-bootstrap';
 const RestauranteForm = (props) => {
 
   const validationSchema = Yup.object().shape({
-    cant_mesas: Yup.number().integer().required('cant_mesas is required'),
+    cant_mesas: Yup.number().integer().min(0,"No puede ser menor a 0").required('cant_mesas is required'),
     direccion: Yup.string().required('Required'),
   });
 

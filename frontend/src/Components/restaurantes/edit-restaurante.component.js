@@ -14,7 +14,7 @@ const EditRestaurante = (props) => {
     RestauranteDataService.update(props.match.params.id, ClientObject)
       .then((res) => {
         if (res.status === 200) {
-          alert('Client successfully updated');
+          alert('Restaurante successfully updated');
           props.history.push('/restaurante-list');
         } else Promise.reject();
       })

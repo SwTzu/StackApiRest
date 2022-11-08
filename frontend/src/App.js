@@ -23,10 +23,16 @@ import RestauranteList from './Components/restaurantes/restaurante-list.componen
 import EditRestaurante from './Components/restaurantes/edit-restaurante.component';
 
 import CreateAdmin from './Components/admin/create-admin.component';
+import AdminList from './Components/admin/admin-list.component';
+import EditAdmin from './Components/admin/edit-admin.component';
 
 import CreateReserva from './Components/reservas/create-reserva.component';
+import ReservaList from './Components/reservas/reserva-list.component';
+import EditReserva from './Components/reservas/edit-reserva.component';
 
 import CreateMesa from './Components/mesas/create-mesa.component';
+import MesaList from './Components/mesas/mesa-list.component';
+import EditMesa from './Components/mesas/edit-mesa.component';
 // App Component
 const App = () => {
   return (
@@ -36,7 +42,7 @@ const App = () => {
           <Navbar bg='dark' variant='dark'>
             <Container>
               <Navbar.Brand>
-                <Link to={'/create-client'} className='nav-link'>
+                <Link to={'/create-clientes'} className='nav-link'>
                   React App
                 </Link>
               </Navbar.Brand>
@@ -51,7 +57,7 @@ const App = () => {
 
                 <Nav>
                   <Link to={'/cliente-list'} className='nav-link'>
-                    Client List
+                    lista de clientes
                   </Link>
                 </Nav>
 
@@ -62,33 +68,23 @@ const App = () => {
                   </Link>
                 </Nav> */}
                 <Nav>
-                  <Link to={'/create-clientes'} className='nav-link'>
-                    Create Cliente
-                  </Link>
-                </Nav>
-                <Nav>
-                  <Link to={'/create-restaurantes'} className='nav-link'>
-                    Create restaurante
-                  </Link>
-                </Nav>
-                <Nav>
                   <Link to={'/restaurante-list'} className='nav-link'>
                     lista de restaurantes
                   </Link>
                 </Nav>
                 <Nav>
-                  <Link to={'/create-admin'} className='nav-link'>
-                    crear admin
+                  <Link to={'/admin-list'} className='nav-link'>
+                    lista de admin
                   </Link>
                 </Nav>
                 <Nav>
-                  <Link to={'/create-reserva'} className='nav-link'>
-                    crear reserva
+                  <Link to={'/reserva-list'} className='nav-link'>
+                    lista de reserva
                   </Link>
                 </Nav>
                 <Nav>
-                  <Link to={'/create-mesa'} className='nav-link'>
-                    crear mesa
+                  <Link to={'/mesa-list'} className='nav-link'>
+                    lista de mesa
                   </Link>
                 </Nav>
               </Nav>
@@ -113,10 +109,16 @@ const App = () => {
                   <Route path='/edit-restaurante/:id' component={EditRestaurante} />
 
                   <Route path='/create-admin' component={CreateAdmin} />
+                  <Route path='/admin-list' component={AdminList} />
+                  <Route path='/edit-admin/:id' component={EditAdmin} />
 
                   <Route path='/create-reserva' component={CreateReserva} />
+                  <Route path='/reserva-list' component={ReservaList} />
+                  <Route path='/edit-reserva/:id' component={EditReserva} />
 
                   <Route path='/create-mesa' component={CreateMesa} />
+                  <Route path='/mesa-list' component={MesaList} />
+                  <Route path='/edit-mesa/:id' component={EditMesa} />
                 </Switch>
               </div>
             </Col>

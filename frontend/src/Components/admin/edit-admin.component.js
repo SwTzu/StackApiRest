@@ -14,7 +14,7 @@ const EditAdmin = (props) => {
     AdminDataService.update(props.match.params.id, ClientObject)
       .then((res) => {
         if (res.status === 200) {
-          alert('Client successfully updated');
+          alert('Admin successfully updated');
           props.history.push('/admin-list');
         } else Promise.reject();
       })
